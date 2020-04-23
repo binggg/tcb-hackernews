@@ -1,0 +1,16 @@
+.header {
+  background-color: #f60;
+  color: #fff;
+  display: flex;
+  text-align: center;
+
+  .link {
+    line-height: 50px;
+    padding:20px;
+    flex: 1;
+
+    &:active {
+      background: rgba(255,255,255, 0.3);
+    }
+  }
+}
