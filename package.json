@@ -1,0 +1,31 @@
+{
+  "name": "tcb-hacker-news",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cloudbaserc.js",
+  "scripts": {
+    "dev:h5": "cd client && OUTPUT_ROOT=build npm run dev:h5",
+    "dev:weapp": "cd client && npm run dev:weapp",
+    "build:h5": "cd client && OUTPUT_ROOT=build npm run build:h5",
+    "build:weapp": "cd client && npm run build:weapp",
+    "dev": "npm run dev:h5 && npm run dev:weapp",
+    "build": "npm run build:h5 && npm run build:weapp",
+    "deploy": "echo y | npm run deploy:function && npm run deploy:static",
+    "deploy:function": "cloudbase functions:deploy --force",
+    "deploy:static": "cloudbase hosting:deploy client/build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binggg/tcb-hackernews.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binggg/tcb-hackernews/issues"
+  },
+  "homepage": "https://github.com/binggg/tcb-hackernews#readme",
+  "devDependencies": {
+    "@cloudbase/cli": "^0.7.3"
+  }
+}

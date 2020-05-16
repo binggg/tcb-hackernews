@@ -12,7 +12,18 @@ function Index() {
   const [list, setList] = useState([]);
   const [total, setTotal] = useState(0);
   const [curPage, setCurPage] = useState(0);
+  const [wxacodeSrc, setWxacodeSrc] = useState("");
   const pageSize = 10;
+
+  useEffect(() => {
+    xxxx;
+    fetchList(curType, curPage);
+  }, [curType, curPage]);
+
+  useEffect(() => {
+    debugger;
+    getWXACode();
+  }, []);
 
   async function fetchList(type, page) {
     const cloud = await getCloud();
@@ -31,6 +42,7 @@ function Index() {
         page: Math.max(page, 1)
       }
     });
+
     if (res.result) {
       setCurPage(Math.max(page, 1));
       setList(res.result.data);
@@ -38,9 +50,22 @@ function Index() {
     }
   }
 
-  useEffect(() => {
-    fetchList(curType, curPage);
-  }, [curType, curPage]);
+  async function getWXACode() {
+    const cloud = await getCloud();
+
+    const res = await cloud.callFunction({
+      name: "openapi",
+      data: {
+        action: "getWXACode"
+      }
+    });
+
+    console.log(res);
+
+    if (res.result) {
+      setWxacodeSrc(res.result);
+    }
+  }
 
   function onSelectType(type) {
     setCurType(type);
@@ -86,6 +111,9 @@ function Index() {
               </View>
             </View>
           ))}
+        </View>
+        <View>
+          <Image></Image>
         </View>
       </View>
     </View>
