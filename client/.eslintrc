@@ -2,6 +2,9 @@
   "extends": [
     "taro"
   ],
+  "globals": {
+    "wx": "readonly"
+  },
   "rules": {
     "no-unused-vars": [
       "error",

@@ -4,6 +4,12 @@
   display: flex;
   text-align: center;
 
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin:20px;
+  }
+
   .link {
     line-height: 50px;
     padding:20px;

@@ -10,7 +10,7 @@ function Header(props) {
     onSelect = () => { }
   } = props
   return (<View className="header">
-    <Image src={logo} style="width: 20px;height: 20px; margin:10px;"></Image>
+    <Image src={logo} className="logo"></Image>
     {
       types.map(type => <View key={type} className="link" onClick={() => onSelect(type)}> {type} </View>)
     }
