@@ -1,5 +1,5 @@
 import Taro, { useState, useEffect } from "@tarojs/taro";
-import { View, Text } from "@tarojs/components";
+import { View, Text, Image } from "@tarojs/components";
 import moment from "moment";
 import getCloud from "../../lib/cloud";
 
@@ -16,12 +16,10 @@ function Index() {
   const pageSize = 10;
 
   useEffect(() => {
-    xxxx;
     fetchList(curType, curPage);
   }, [curType, curPage]);
 
   useEffect(() => {
-    debugger;
     getWXACode();
   }, []);
 
@@ -59,8 +57,6 @@ function Index() {
         action: "getWXACode"
       }
     });
-
-    console.log(res);
 
     if (res.result) {
       setWxacodeSrc(res.result);
@@ -112,9 +108,14 @@ function Index() {
             </View>
           ))}
         </View>
-        <View>
-          <Image></Image>
-        </View>
+        {wxacodeSrc && (
+          <View>
+            <Image
+              style="width: 300px;height: 300px;background: #fff;"
+              src={wxacodeSrc}
+            ></Image>
+          </View>
+        )}
       </View>
     </View>
   );
