@@ -3,28 +3,38 @@ import 'package:flutter/material.dart';
 import 'package:cloudbase_core/cloudbase_core.dart';
 import 'package:cloudbase_auth/cloudbase_auth.dart';
 
-// 初始化 CloudBase
-CloudBaseCore core = CloudBaseCore.init({
-    // 填写你的云开发 env
-    'env': 'your-env-id'
-});
 
-// 获取登录状态
-CloudBaseAuth auth = CloudBaseAuth(core);
-CloudBaseAuthState authState = await auth.getAuthState();
 
-// 唤起匿名登录
-if (authState == null) {
-  await auth.signInAnonymously().then((success) {
-    // 登录成功
-    print(success);
-  }).catchError((err) {
-    // 登录失败
-    print(err);
-  });
-}
 
 void main() {
+  // 初始化 CloudBase
+  CloudBaseCore core = CloudBaseCore.init({
+      // 填写你的云开发 env
+      'env': 'bookerzhao-fid9t',
+  });
+
+  // 获取登录状态
+  CloudBaseAuth auth = CloudBaseAuth(core);
+  CloudBaseAuthState authState = await auth.getAuthState();
+
+  // 唤起匿名登录
+  if (authState == null) {
+    await auth.signInAnonymously().then((success) {
+      // 登录成功
+      print(success);
+    }).catchError((err) {
+      // 登录失败
+      print(err);
+    });
+  }
+
+  CloudBaseFunction cloudbase = CloudBaseFunction(core);
+
+  // 请求参数
+  Map<String, dynamic> data = {'type': 'story';
+  
+  CloudBaseResponse res = await cloudbase.callFunction('"hackernews-api', data);
+  print(res.data) // { sum: 3 }
   runApp(MyApp());
 }
 
