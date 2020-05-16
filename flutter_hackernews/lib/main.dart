@@ -1,5 +1,29 @@
 import 'package:flutter/material.dart';
 
+import 'package:cloudbase_core/cloudbase_core.dart';
+import 'package:cloudbase_auth/cloudbase_auth.dart';
+
+// 初始化 CloudBase
+CloudBaseCore core = CloudBaseCore.init({
+    // 填写你的云开发 env
+    'env': 'your-env-id'
+});
+
+// 获取登录状态
+CloudBaseAuth auth = CloudBaseAuth(core);
+CloudBaseAuthState authState = await auth.getAuthState();
+
+// 唤起匿名登录
+if (authState == null) {
+  await auth.signInAnonymously().then((success) {
+    // 登录成功
+    print(success);
+  }).catchError((err) {
+    // 登录失败
+    print(err);
+  });
+}
+
 void main() {
   runApp(MyApp());
 }
