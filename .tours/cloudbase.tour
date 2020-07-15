@@ -1,0 +1,176 @@
+{
+  "title": "CLoudBase",
+  "steps": [
+    {
+      "file": "project.config.json",
+      "line": 6,
+      "description": "修改 appid 为自己的小程序appid",
+      "selection": {
+        "start": {
+          "line": 6,
+          "character": 3
+        },
+        "end": {
+          "line": 6,
+          "character": 8
+        }
+      }
+    },
+    {
+      "file": "package.json",
+      "line": 8,
+      "description": "运行开发命令\ncd client && npm run dev:weapp"
+    },
+    {
+      "file": "client/src/pages/index/index.jsx",
+      "line": 74,
+      "description": "实现前端界面"
+    },
+    {
+      "file": "client/src/pages/index/index.scss",
+      "line": 1,
+      "description": "添加CSS样式"
+    },
+    {
+      "file": "package.json",
+      "line": 10,
+      "description": "构建查看效果\n\nnpm run build:weapp",
+      "selection": {
+        "start": {
+          "line": 10,
+          "character": 6
+        },
+        "end": {
+          "line": 10,
+          "character": 17
+        }
+      }
+    },
+    {
+      "file": "cloud/functions/hackernews-api/index.js",
+      "line": 9,
+      "description": "接下来进入开发云函数阶段\n\n首先在云开发控制台开通一个数据库集合 hackernews\n"
+    },
+    {
+      "file": "cloud/functions/hackernews-api/index.js",
+      "line": 22,
+      "description": "使用 云开发 sdk 进行数据的查询"
+    },
+    {
+      "file": "cloud/functions/hackernews-api/index.js",
+      "line": 40,
+      "description": "根据查询返回数据和总数"
+    },
+    {
+      "file": "client/src/pages/index/index.jsx",
+      "line": 30,
+      "description": "使用微信客户端 sdk 调用云函数来请求数据并渲染"
+    },
+    {
+      "file": "client/src/lib/cloud/index.weapp.js",
+      "line": 9,
+      "description": "在微信环境下调用云函数使用的是wx.cloud内置的callFunction 方法"
+    },
+    {
+      "file": "cloudbaserc.js",
+      "line": 2,
+      "description": "接下来进入部署函数\n一共有三种方式可以部署函数\n微信控制台（不需要配置文件）\nCLI\nVSCODE 插件"
+    },
+    {
+      "file": "package.json",
+      "line": 12,
+      "description": "接下来在小程序开发者工具里面运行\n了解下云函数 日志 云数据库 等功能"
+    },
+    {
+      "file": "cloud/functions/openapi/index.js",
+      "line": 30,
+      "description": "接下来演示如何实现几行代码调用微信开放能力\n\n新建一个云函数 openapi 通过 cloud.openapi.wxacode.get 实现获取小程序码",
+      "selection": {
+        "start": {
+          "line": 32,
+          "character": 32
+        },
+        "end": {
+          "line": 32,
+          "character": 56
+        }
+      }
+    },
+    {
+      "file": "cloud/functions/openapi/index.js",
+      "line": 41,
+      "description": "将获取的buffer 调用云开发文件上传能力上传到云存储"
+    },
+    {
+      "file": "cloud/functions/openapi/index.js",
+      "line": 47,
+      "description": "调用云开发 sdk 的获取临时文件地址拿到url 返回给客户端"
+    },
+    {
+      "file": "cloud/functions/openapi/config.json",
+      "line": 4,
+      "description": "调用微信云调用只需要声明权限即可"
+    },
+    {
+      "file": "package.json",
+      "line": 12,
+      "description": "部署 openapi 函数，查看效果\n学习使用微信开发者工具的云存储"
+    },
+    {
+      "file": "package.json",
+      "line": 11,
+      "description": "了解云调用 和云开发的扩展能力"
+    },
+    {
+      "file": "client/src/lib/cloud/index.h5.js",
+      "line": 3,
+      "description": "接下来演示如何在 web 页面访问云开发\n\n只需要使用 tcb-js-sdk\n登录方式的选择\n同样提供 callfunction 等方法"
+    },
+    {
+      "file": "package.json",
+      "line": 7,
+      "description": "打开 h5 开发模式，演示网页使用云开发\n\n进入控制台演示云开发控制台功能，安全域名，登录方式等"
+    },
+    {
+      "file": "package.json",
+      "line": 9,
+      "description": "构建 H5 准备部署到静态托管"
+    },
+    {
+      "file": "package.json",
+      "line": 15,
+      "description": "将网站部署到静态托管，在线体验"
+    },
+    {
+      "file": "flutter_hackernews/pubspec.yaml",
+      "line": 26,
+      "description": "演示 FLutter 能力\nflutter create cloudbase_hackernews\n\n配置cloudbase 依赖"
+    },
+    {
+      "file": "flutter_hackernews/lib/main.dart",
+      "line": 8,
+      "description": "引入 CLoudbase Sdk\n\n调用匿名登录\n"
+    },
+    {
+      "file": "flutter_hackernews/lib/main.dart",
+      "line": 33,
+      "description": "调用callFunction 获取数据\n了解移动应用的 数据库、登录、安全来源、文件存储\n"
+    },
+    {
+      "file": "package.json",
+      "line": 13,
+      "description": "开放工作完成\n在控制台演示扩展安装 CMS"
+    },
+    {
+      "file": "private.json",
+      "line": 2,
+      "description": "CMS 安装需要填写的参数\n在安装过成功中了解 CMS 扩展的构成\n访问 CMS 扩展，演示建模能力，增删改查，在h5 页面和小程序等体验"
+    },
+    {
+      "file": "private.json",
+      "line": 4,
+      "description": "演示 CMS 核心函数\nauth koa 应用\n扩展的含义，云上微应用编排能力\n开发者也可以自己开发扩展"
+    }
+  ],
+  "ref": "fecf85cc4ec9f7a10bdf01eb55d8be855a053c93"
+}

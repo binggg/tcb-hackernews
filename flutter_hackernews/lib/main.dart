@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:cloudbase_core/cloudbase_core.dart';
 import 'package:cloudbase_auth/cloudbase_auth.dart';
 
-
-
-
 void main() {
   // 初始化 CloudBase
   CloudBaseCore core = CloudBaseCore.init({
